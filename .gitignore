@@ -1,0 +1,12 @@
+*.aux
+*.log
+*.out
+*.toc
+*.nav
+*.snm
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+_pv_*.png
+*-new.*
+*-v2.*

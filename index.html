@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>复变函数B 课程主页</title>
+<style>
+  :root {
+    --purple: #662D91;
+    --purple-light: #f3eef8;
+    --purple-mid: #e8dff0;
+    --text: #2c2c2c;
+    --text-light: #666;
+    --bg: #fafafa;
+    --card-bg: #fff;
+    --border: #e0d6eb;
+    --shadow: 0 2px 12px rgba(102,45,145,0.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Noto Sans SC", "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* Header */
+  header {
+    background: linear-gradient(135deg, var(--purple) 0%, #8B5FBF 100%);
+    color: #fff;
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.3rem;
+  }
+  header .subtitle {
+    font-size: 1rem;
+    opacity: 0.85;
+    font-weight: 400;
+  }
+  header .author {
+    margin-top: 0.8rem;
+    font-size: 0.95rem;
+    opacity: 0.75;
+  }
+
+  /* Nav */
+  nav {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    max-width: 900px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  nav a {
+    display: block;
+    padding: 0.9rem 1.6rem;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+  }
+  nav a:hover, nav a.active {
+    color: var(--purple);
+    border-bottom-color: var(--purple);
+    background: var(--purple-light);
+  }
+
+  /* Main */
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* Section */
+  section {
+    margin-bottom: 3rem;
+    scroll-margin-top: 4rem;
+  }
+  section h2 {
+    font-size: 1.4rem;
+    color: var(--purple);
+    border-left: 4px solid var(--purple);
+    padding-left: 0.8rem;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+  }
+
+  /* Cards */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.3rem 1.2rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s, box-shadow 0.15s;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(102,45,145,0.14);
+    border-color: var(--purple);
+  }
+  .card .icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+  .card .title {
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 0.3rem;
+    color: var(--text);
+  }
+  .card .desc {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    flex: 1;
+  }
+  .card .tag {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-size: 0.75rem;
+    padding: 0.15rem 0.6rem;
+    border-radius: 20px;
+    background: var(--purple-light);
+    color: var(--purple);
+    font-weight: 500;
+    width: fit-content;
+  }
+
+  /* Single card (full width) */
+  .card-full {
+    grid-column: 1 / -1;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    header h1 { font-size: 1.6rem; }
+    nav a { padding: 0.7rem 1rem; font-size: 0.85rem; }
+    .card-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>复变函数 B</h1>
+  <div class="subtitle">Complex Variables B &mdash; 课程主页</div>
+  <div class="author">Mitsuha 三叶</div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#homework">作业</a></li>
+    <li><a href="#quiz">小测</a></li>
+    <li><a href="#summary">知识点</a></li>
+    <li><a href="#lecture">习题课</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- 作业 -->
+  <section id="homework">
+    <h2>作业习题与解答</h2>
+    <div class="card-grid">
+      <a class="card" href="作业/HW1_CH1.pdf" target="_blank">
+        <div class="icon">&#128221;</div>
+        <div class="title">作业 1</div>
+        <div class="desc">第一章 &mdash; 复变初等函数</div>
+        <span class="tag">习题</span>
+      </a>
+      <a class="card" href="作业/HW2_CH2_CH3.pdf" target="_blank">
+        <div class="icon">&#128221;</div>
+        <div class="title">作业 2</div>
+        <div class="desc">第二、三章 &mdash; 解析函数与复积分</div>
+        <span class="tag">习题</span>
+      </a>
+      <a class="card" href="作业/hw3_problems.pdf" target="_blank">
+        <div class="icon">&#128221;</div>
+        <div class="title">作业 3</div>
+        <div class="desc">第三章 &mdash; Cauchy 定理与积分公式</div>
+        <span class="tag">习题</span>
+      </a>
+      <a class="card" href="作业/HW4.pdf" target="_blank">
+        <div class="icon">&#128221;</div>
+        <div class="title">作业 4</div>
+        <div class="desc">第四、五章 &mdash; 级数表示与留数</div>
+        <span class="tag">习题</span>
+      </a>
+      <a class="card card-full" href="作业/HW1-3答案.pdf" target="_blank">
+        <div class="icon">&#9989;</div>
+        <div class="title">作业 1&ndash;3 参考解答</div>
+        <div class="desc">前三次作业的完整解答</div>
+        <span class="tag">解答</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 小测 -->
+  <section id="quiz">
+    <h2>小测与解答</h2>
+    <div class="card-grid">
+      <a class="card" href="小测/小测1.pdf" target="_blank">
+        <div class="icon">&#128203;</div>
+        <div class="title">课堂小测 1</div>
+        <div class="desc">第一次课堂小测试卷</div>
+        <span class="tag">试卷</span>
+      </a>
+      <a class="card" href="小测/复变函数课堂小测2解答 (2).pdf" target="_blank">
+        <div class="icon">&#9989;</div>
+        <div class="title">课堂小测 2 解答</div>
+        <div class="desc">洛朗级数 &mdash; 参考解答</div>
+        <span class="tag">解答</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 知识点 -->
+  <section id="summary">
+    <h2>知识点汇总</h2>
+    <div class="card-grid">
+      <a class="card card-full" href="复变函数知识点汇总.pdf" target="_blank">
+        <div class="icon">&#128218;</div>
+        <div class="title">复变函数知识点汇总</div>
+        <div class="desc">全书考点梳理：初等函数、解析函数与 C&ndash;R 方程、复积分与 Cauchy 公式、留数定理、Rouch&eacute; 定理等</div>
+        <span class="tag">汇总</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 习题课 -->
+  <section id="lecture">
+    <h2>习题课讲义</h2>
+    <div class="card-grid">
+      <a class="card card-full" href="习题课讲义/习题课讲义.pdf" target="_blank">
+        <div class="icon">&#128218;</div>
+        <div class="title">习题课讲义</div>
+        <div class="desc">留数定理、Rouch&eacute; 定理与综合计算 &mdash; 讲课例题、课堂练习与小测</div>
+        <span class="tag">讲义</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  复变函数 B &copy; 2026 Mitsuha 三叶
+</footer>
+
+</body>
+</html>
